@@ -1,0 +1,26 @@
+.active {
+  @apply bg-darkmode-700;
+}
+
+.active::before,
+.active::after {
+  --wave-size: 1.5rem;
+  --wave-height: calc(var(--wave-size) * 2);
+  --wave-y-pos: calc(var(--wave-size) * -2);
+  content: "";
+  @apply pointer-events-none absolute right-0 bg-transparent shadow-darkmode-700;
+  height: var(--wave-height);
+  width: var(--wave-size);
+}
+
+.active::before {
+  @apply rounded-br-full;
+  box-shadow: 0 var(--wave-size) 0 0 var(--tw-shadow-color);
+  top: var(--wave-y-pos);
+}
+
+.active::after {
+  @apply rounded-tr-full;
+  box-shadow: 0 calc(var(--wave-size) * -1) 0 0 var(--tw-shadow-color);
+  bottom: var(--wave-y-pos);
+}
