@@ -1,0 +1,10 @@
+.env/*.local
+.env/certs
+*.log
+node_modules/
+dist/
+dist-ssr/
+*.swp
+.vscode/
+.idea/
+.DS_Store
