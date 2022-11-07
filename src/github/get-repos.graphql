@@ -1,0 +1,19 @@
+query GetRepos($orderReposBy: RepositoryOrder!, $orderLanguagesBy: LanguageOrder!) {
+  viewer {
+    repositories(first: 100, orderBy: $orderReposBy) {
+      nodes {
+        databaseId
+        description
+        name
+        isArchived
+        languages(first: 1, orderBy: $orderLanguagesBy) {
+          nodes {
+            color
+            name
+          }
+        }
+        url
+      }
+    }
+  }
+}

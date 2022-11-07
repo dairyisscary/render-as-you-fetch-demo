@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@heroicons/react': ^2.0.13
+  '@notarize/qlc-cli': ^2.0.0
   '@tanstack/react-location': ^3.7.4
   '@tanstack/react-query': ^4.14.3
   '@types/node': ^18.11.9
@@ -19,6 +20,7 @@ specifiers:
 
 dependencies:
   '@heroicons/react': 2.0.13_react@18.2.0
+  '@notarize/qlc-cli': 2.0.0
   '@tanstack/react-location': 3.7.4_biqbaboplfbrettd7655fr4n2y
   '@tanstack/react-query': 4.14.3_biqbaboplfbrettd7655fr4n2y
   '@vitejs/plugin-react': 2.2.0_vite@3.2.2
@@ -395,6 +397,13 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+    dev: false
+
+  /@notarize/qlc-cli/2.0.0:
+    resolution: {integrity: sha512-0e6yMMOyHQIRZ37p1TwYLzivCcUf3j2zaPXxktXDXKv4Tpghz0hKgCw9ZwIbKGenAlnuoH41YTX253MSLcYXjQ==}
+    engines: {node: '>= 10.0.0'}
+    hasBin: true
+    requiresBuild: true
     dev: false
 
   /@tanstack/query-core/4.14.3:

@@ -1,1 +1,4 @@
 pnpm-lock.yaml
+schema.json
+__generated__
+dist/
