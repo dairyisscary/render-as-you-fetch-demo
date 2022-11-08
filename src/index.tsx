@@ -9,6 +9,7 @@ import Main from "~/layout/main";
 import Home from "~/pages/home";
 import FourOhFour from "~/pages/404";
 import FetchOnRenderRoute from "~/pages/fetch-on-render/route";
+import RenderAsYouFetchRoute from "~/pages/render-as-you-fetch/route";
 
 import "./index.css";
 
@@ -20,6 +21,7 @@ const router = (
     routes={[
       { path: "/", element: <Home />, meta: { breadcrumb: "Home" } },
       FetchOnRenderRoute,
+      RenderAsYouFetchRoute,
       { path: "*", element: <FourOhFour />, meta: { breadcrumb: "Not Found" } },
     ]}
   >

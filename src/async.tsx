@@ -1,4 +1,11 @@
-import { lazy, type ComponentType, type LazyExoticComponent, type ReactNode } from "react";
+import {
+  lazy,
+  createElement,
+  type ReactElement,
+  type ComponentType,
+  type ReactNode,
+  type LazyExoticComponent,
+} from "react";
 import {
   QueryClient,
   QueryClientProvider as QueryClientProviderInner,
@@ -30,4 +37,18 @@ export function delayedLazy<T extends ComponentType<unknown>>(
   delayMs?: number,
 ): LazyExoticComponent<T> {
   return lazy(() => delay(factory(), delayMs, "lazy component"));
+}
+
+export function delayedElement<T extends ComponentType<{}>>(
+  factory: () => Promise<{ default: T }>,
+  delayMs?: number,
+): () => Promise<ReactElement<{}>> {
+  let cache: ReactElement<{}> | undefined;
+  return async () => {
+    if (!cache) {
+      const { default: Component } = await delay(factory(), delayMs, "async element");
+      cache = createElement(Component);
+    }
+    return cache;
+  };
 }
