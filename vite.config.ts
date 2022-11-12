@@ -17,7 +17,7 @@ export default defineConfig(async () => {
     },
     server: {
       host: "local.spookysoftware.dev",
-      port: 1313,
+      port: 443,
       strictPort: true,
       https: {
         cert: await promises.readFile(pathResolve(envDir, "./certs/local.spookysoftware.dev.pem")),

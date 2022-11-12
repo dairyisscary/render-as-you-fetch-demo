@@ -16,7 +16,7 @@ function NavLink(props: Omit<ComponentProps<typeof Link>, "className" | "getActi
 
 export default function Sidebar() {
   return (
-    <nav aria-label="Main" className="w-72">
+    <nav aria-label="Main" className="w-64">
       <Link
         to="/"
         className="mb-5 mr-10 flex items-center space-x-3 border-b border-white/10 py-5 px-4 text-lg text-white"

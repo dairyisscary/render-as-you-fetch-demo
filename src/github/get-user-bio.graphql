@@ -1,0 +1,11 @@
+query GetUserBio {
+  viewer {
+    avatarUrl
+    bio
+    location
+    login
+    name
+    url
+    websiteUrl
+  }
+}

@@ -4,6 +4,8 @@ import { delayedElement, QUERY_CLIENT } from "~/async";
 import LoadingIndicator from "~/layout/loading-indicator";
 import { getRepos } from "~/github/repos";
 
+import SidebarRoute from "./sidebar/route";
+
 export const QUERY_OPTS = { queryKey: ["renderasfetch"], queryFn: getRepos, refetchOnMount: false };
 
 const route: Route = {
@@ -14,6 +16,7 @@ const route: Route = {
     return QUERY_CLIENT.getQueryData(QUERY_OPTS.queryKey) ?? QUERY_CLIENT.fetchQuery(QUERY_OPTS);
   },
   meta: { breadcrumb: "Render as you Fetch" },
+  children: [SidebarRoute],
 };
 
 export default route;
